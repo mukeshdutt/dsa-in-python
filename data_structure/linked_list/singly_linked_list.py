@@ -29,3 +29,18 @@ class SinglyLinkedList:
             temp = temp.next
         print("None")
 
+    def insert_at_begin(self, data):
+        """head node is taking into a temp node and iterating the temp node and filling data into head node"""
+        temp = self.head
+        self.head = Node(data)
+        self.head.next = temp
+        return
+
+    def insert_at_end(self, data):
+        """insert data at the end"""
+        temp = self.head
+        while temp.next:
+            self.head.next = temp.next
+            temp = temp.next
+        
+
