@@ -40,7 +40,60 @@ class SinglyLinkedList:
         """insert data at the end"""
         temp = self.head
         while temp.next:
-            self.head.next = temp.next
             temp = temp.next
+        temp.next = Node(data)
+
+    def length(self):
+        temp = self.head
+        count = 0
+
+        # when list is empty
+        if self.head is None:
+            return 0
+
+        # when list has data available
+        if self.head is not None:
+            count = 1
+            while temp:
+                count += 1
+                temp = temp.next
+                return count
+
+    def insert_at_postion(self, pos, data):
         
+        # when list is empty
+        if self.head is None:
+            self.create_node(data)
+            return
+        
+        # Insert at the beginning
+        if pos == 0:
+            pass # insert at head
+
+        # Insert at last
+        count = self.length()
+        if pos == count:
+            pass # insert at last
+
+        # Insert at specific position
+        temp = self.head
+        prev = temp
+        count = 1
+        while temp:
+            if count == pos:
+                new_node = Node(data)
+                prev.next = new_node
+                new_node.next = temp
+            count += 1
+            prev = temp
+            temp = temp.next                
+
+    def print_prev_current(self):
+
+        prev = None
+        temp = self.head
+        while temp:            
+            print(f"(prev: {prev.data if prev is not None else "None"}, current: {temp.data})", end=" -> ")
+            prev = temp
+            temp = temp.next
 
