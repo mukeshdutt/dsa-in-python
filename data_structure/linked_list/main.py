@@ -1,15 +1,13 @@
-from singly_linked_list import Node, SinglyLinkedList
+from doubly_linked_list import Node, DoublyLinkedList
 
-if __name__:
-    
-    singly_linked_list = SinglyLinkedList()
-    singly_linked_list.create_node(2)
-    singly_linked_list.create_node(4)
-    singly_linked_list.create_node(8)
-    singly_linked_list.insert_at_postion(2, 1001)
-    # singly_linked_list.insert_at_begin(10)
-    # singly_linked_list.insert_at_end(14)
-    # singly_linked_list.insert_at_end(14)
-    # singly_linked_list.length()
-    singly_linked_list.traversal_linked_list()
-    # singly_linked_list.print_prev_current()
+doubly_linked_list = DoublyLinkedList()
+
+doubly_linked_list.create_node(2)
+doubly_linked_list.create_node(4)
+doubly_linked_list.create_node(6)
+doubly_linked_list.create_node(8)
+doubly_linked_list.create_node(10)
+doubly_linked_list.insert_at_end(20)
+doubly_linked_list.insert_at_position(101, 3)
+
+doubly_linked_list.traversal_forward()
